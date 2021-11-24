@@ -59,4 +59,16 @@ public class User {
     public void setAge(Byte age) {
         this.age = age;
     }
+
+
+    //Переопределение метода  toString () для вывода значений ArrayList
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                '}';
+    }
 }
