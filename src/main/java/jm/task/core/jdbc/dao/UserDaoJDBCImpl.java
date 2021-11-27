@@ -9,8 +9,6 @@ import java.util.List;
 
 public class UserDaoJDBCImpl implements UserDao {
 
-    //static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-
     public UserDaoJDBCImpl() {
 
     }
@@ -20,11 +18,11 @@ public class UserDaoJDBCImpl implements UserDao {
     //создание таблицы
     public void createUsersTable() {
         try (Statement statement = connect.createStatement()) {
-            String SQL = "CREATE TABLE users " +
-                    "(id INTEGER not NULL, " +
+            String SQL = "CREATE TABLE IF NOT EXISTS users " +
+                    "(id INT NOT NULL AUTO_INCREMENT, " +
                     " name VARCHAR(45), " +
                     " lastName VARCHAR (45), " +
-                    " age INTEGER not NULL, " +
+                    " age INT not NULL, " +
                     " PRIMARY KEY (id))";
             statement.executeUpdate(SQL);
 
@@ -38,8 +36,8 @@ public class UserDaoJDBCImpl implements UserDao {
         String SQL = "DROP TABLE IF EXISTS users";
         try (PreparedStatement preparedStatement = connect.prepareStatement(SQL)) {
             preparedStatement.executeUpdate();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
 
     }
