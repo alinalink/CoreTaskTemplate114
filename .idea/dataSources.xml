@@ -8,5 +8,16 @@
       <jdbc-url>jdbc:mysql://localhost:3306/users</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="ru:hibernate.cfg.xml/Hibernate" uuid="fd786a4c-4fae-4cd0-ab2a-0c676a6f6f06">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate
+
+C:/Users/alina/CoreTaskTemplate1/src/main/java/ru/hibernate.cfg.xml</remarks>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/users</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
